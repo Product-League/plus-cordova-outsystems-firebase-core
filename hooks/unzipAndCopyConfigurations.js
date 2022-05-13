@@ -29,8 +29,7 @@ module.exports = function(context) {
   var sourceFolderPath = utils.getSourceFolderPath(context, wwwPath);
   var googleServicesZipFile = utils.getZipFile(sourceFolderPath, constants.googleServices);
   if (!googleServicesZipFile) {
-    //utils.handleError("No zip file found containing google services configuration file", defer);
-    throw new Error("No configuration zip file found (google-services-zip).");
+    throw new Error("No configuration zip file found (google-services-zip). You can check how to configure this file at: https://success.outsystems.com/Documentation/11/Extensibility_and_Integration/Mobile_Plugins/Firebase_Plugins");
   }
 
   var zip = new AdmZip(googleServicesZipFile);
