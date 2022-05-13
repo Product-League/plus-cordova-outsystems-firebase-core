@@ -29,7 +29,8 @@ module.exports = function(context) {
   var sourceFolderPath = utils.getSourceFolderPath(context, wwwPath);
   var googleServicesZipFile = utils.getZipFile(sourceFolderPath, constants.googleServices);
   if (!googleServicesZipFile) {
-    utils.handleError("No zip file found containing google services configuration file", defer);
+    //utils.handleError("No zip file found containing google services configuration file", defer);
+    throw new Error("No configuration zip file found (google-services-zip).");
   }
 
   var zip = new AdmZip(googleServicesZipFile);
