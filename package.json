@@ -1,6 +1,6 @@
 {
   "name": "cordova-outsystems-firebase-core",
-  "version": "0.0.1",
+  "version": "1.0.1",
   "description": "Core Plugin for OutSystems Firebase Plugins",
   "cordova": {
     "id": "cordova-outsystems-firebase-core",

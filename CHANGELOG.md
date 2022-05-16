@@ -8,6 +8,8 @@ The changes documented here do not include those from the original repository.
 
 ## [Unreleased]
 
+## [1.0.1]
+
 ### 2021-05-09
 - Improve error message when .zip is not found (https://outsystemsrd.atlassian.net/browse/RMET-1538)
 
