@@ -6,7 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 The changes documented here do not include those from the original repository.
 
-## [Unreleased]
+## [2.0.0]
+
+### 2021-05-09
+- Remove the hooks to read the (now unneeded) .zip files (https://outsystemsrd.atlassian.net/browse/RMET-2451)
 
 ## [1.0.1]
 

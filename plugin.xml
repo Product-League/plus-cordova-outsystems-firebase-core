@@ -4,14 +4,4 @@
 	xmlns:android="http://schemas.android.com/apk/res/android">
 	<name>cordova-outsystems-firebase-core</name>
 
-	<hook type="before_plugin_install" src="hooks/installDependencies.js" />
-	<hook type="before_plugin_install" src="hooks/unzipAndCopyConfigurations.js" />
-
-	<platform name="ios">
-		<resource-file src="GoogleService-Info.plist" target="./GoogleService-Info.plist" />
-	</platform>
-	<platform name="android">
-		<resource-file src="google-services.json" target="./google-services.json" />
-	</platform>
-
 </plugin>
