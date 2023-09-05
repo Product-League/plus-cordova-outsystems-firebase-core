@@ -11,6 +11,5 @@
 	</platform>
 	<platform name="ios">
 	<hook type="before_plugin_install" src="hooks/iosTest.js" />
-	<hook type="before_build" src="hooks/iosTest.js" />
 	</platform>
 </plugin>
