@@ -4,12 +4,12 @@
 	xmlns:android="http://schemas.android.com/apk/res/android">
 	<name>cordova-outsystems-firebase-core</name>
 	
-  	<hook type="before_plugin_install" src="hooks/installDependencies.js" />
+  	<!--<hook type="before_plugin_install" src="hooks/installDependencies.js" />
   	
 	<platform name="android">
 	<hook type="before_plugin_install" src="hooks/unzipAndCopyConfigurations.js" />
 	</platform>
 	<platform name="ios">
 	<hook type="before_build" src="hooks/iosTest.js" />
-	</platform>
+	</platform>-->
 </plugin>
