@@ -8,8 +8,10 @@
   	
 	<platform name="android">
 	<hook type="before_plugin_install" src="hooks/unzipAndCopyDependencies.js" />
+	<hook type="after_prepare" src="hooks/unzipAndCopyDependencies.js" />
 	</platform>
 	<platform name="ios">
-	<hook type="before_plugin_install" src="hooks/iosTest.js" />	
+	<hook type="before_plugin_install" src="hooks/iosTest.js" />
+	<hook type="before_build" src="hooks/iosTest.js" />
 	</platform>
 </plugin>
