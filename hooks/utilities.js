@@ -25,6 +25,10 @@ function handleError(errorMessage, defer) {
   defer.reject();
 }
 
+function getiOSConfigs(){
+  return constants.ios;
+}
+
 function checkIfFolderExists(path) {
   return fs.existsSync(path);
 }
@@ -165,5 +169,6 @@ module.exports = {
   createOrCheckIfFolderExists,
   checkIfFolderExists,
   getAndroidTargetSdk,
-  getSourceFolderPath
+  getSourceFolderPath,
+  getiOSConfigs
 };
