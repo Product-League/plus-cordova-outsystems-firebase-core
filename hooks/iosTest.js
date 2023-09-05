@@ -42,8 +42,10 @@ module.exports = function(context) {
     utils.handleError("No directory found", defer);
   }
 
+  const iosConf = utils.getiOSConfigs();
+
   var fileName = files.find(function (name) {
-    return name.endsWith(utils.constants.ios.firebaseFileExtension);
+    return name.endsWith(iosConf.firebaseFileExtension);
   });
   if (!fileName) {
     //utils.handleError("No file found", defer);
