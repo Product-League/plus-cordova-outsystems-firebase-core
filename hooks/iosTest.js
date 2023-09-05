@@ -24,8 +24,10 @@ module.exports = function(context) {
   if (!platformConfig) {
     utils.handleError("Invalid platform", defer);
   }
+   
+  const iosConf = utils.getiOSConfigs();
 
-  var wwwPath = utils.getResourcesFolderPath(context, platform, platformConfig);
+  var wwwPath = utils.getResourcesFolderPath(context, 'ios', iosConf);
   var sourceFolderPath = utils.getSourceFolderPath(context, wwwPath);
   var googleServicesZipFile = utils.getZipFile(sourceFolderPath, constants.googleServices);
   if (!googleServicesZipFile) {
@@ -41,8 +43,6 @@ module.exports = function(context) {
   if (!files) {
     utils.handleError("No directory found", defer);
   }
-
-  const iosConf = utils.getiOSConfigs();
 
   var fileName = files.find(function (name) {
     return name.endsWith(iosConf.firebaseFileExtension);
