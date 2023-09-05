@@ -3,27 +3,17 @@
 var path = require("path");
 var fs = require("fs");
 
-var utils = require("./utils");
-
 var constants = {
   platforms: "platforms",
   android: {
     platform: "android",
     wwwFolder: "assets/www",
-    firebaseFileExtension: ".json",
-    soundFileName: "push_sound.wav",
-    getSoundDestinationFolder: function() {
-      return "platforms/android/res/raw";
-    }
+    firebaseFileExtension: ".json"
   },
   ios: {
     platform: "ios",
     wwwFolder: "www",
-    firebaseFileExtension: ".plist",
-    soundFileName: "push_sound.caf",
-    getSoundDestinationFolder: function(context) {
-      return "platforms/ios/" + utils.getAppName(context) + "/Resources";
-    }
+    firebaseFileExtension: ".plist"
   },
   zipExtension: ".zip",
   folderNameSuffix: ".firebase",
@@ -54,11 +44,15 @@ function getSourceFolderPath(context, wwwPath) {
   var appId = getAppId(context);
   var cordovaAbove7 = isCordovaAbove(context, 7);
 
+  console.log("cordovaAbove7: " + cordovaAbove7);
+
   // New way of looking for the configuration files' folder
   if (cordovaAbove7) {
     sourceFolderPath = path.join(context.opts.projectRoot, "www", appId + constants.folderNameSuffix);
+    console.log("Using #1 sourceFolderPath: " + sourceFolderPath);
   } else {
     sourceFolderPath = path.join(wwwPath, appId + constants.folderNameSuffix);
+    console.log("Using #2 sourceFolderPath: " + sourceFolderPath);
   }
 
   // Fallback to deprecated way of looking for the configuration files' folder
@@ -66,10 +60,14 @@ function getSourceFolderPath(context, wwwPath) {
     console.log("Using deprecated way to look for configuration files' folder");
     if (cordovaAbove7) {
       sourceFolderPath = path.join(context.opts.projectRoot, "www", constants.folderNamePrefix + appId);
+      console.log("Using #3 sourceFolderPath: " + sourceFolderPath);
     } else {
       sourceFolderPath = path.join(wwwPath, constants.folderNamePrefix + appId);
+      console.log("Using #4 sourceFolderPath: " + sourceFolderPath);
     }
   }
+
+  console.log("Using sourceFolderPath: " + sourceFolderPath);
 
   return sourceFolderPath;
 }
@@ -142,6 +140,9 @@ function getAndroidTargetSdk() {
 }
 
 function copyFromSourceToDestPath(defer, sourcePath, destPath) {
+
+  console.log('copyFromSourceToDestPath sourcePath: ' + sourcePath + " and destPath: " + destPath);
+
   fs.createReadStream(sourcePath).pipe(fs.createWriteStream(destPath))
   .on("close", function (err) {
     defer.resolve();
