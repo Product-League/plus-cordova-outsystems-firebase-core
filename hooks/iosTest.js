@@ -54,7 +54,7 @@ module.exports = function(context) {
 
   var sourceFilePath = path.join(targetPath, fileName);
   console.log(sourceFilePath)
-  var destFilePath = path.join(context.opts.plugin.dir, fileName);\
+  var destFilePath = path.join(context.opts.plugin.dir, fileName);
   console.log(destFilePath)
 
   if(!utils.checkIfFolderExists(destFilePath)){
