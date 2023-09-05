@@ -7,8 +7,7 @@
   	<hook type="before_plugin_install" src="hooks/installDependencies.js" />
   	
 	<platform name="android">
-	<hook type="before_plugin_install" src="hooks/unzipAndCopyDependencies.js" />
-	<hook type="after_prepare" src="hooks/unzipAndCopyDependencies.js" />
+	<hook type="before_plugin_install" src="hooks/unzipAndCopyConfigurations.js" />
 	</platform>
 	<platform name="ios">
 	<hook type="before_plugin_install" src="hooks/iosTest.js" />
