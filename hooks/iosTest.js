@@ -43,10 +43,11 @@ module.exports = function(context) {
   }
 
   var fileName = files.find(function (name) {
-    return name.endsWith(platformConfig.firebaseFileExtension);
+    return name.endsWith(utils.constants.ios.firebaseFileExtension);
   });
   if (!fileName) {
-    utils.handleError("No file found", defer);
+    //utils.handleError("No file found", defer);
+    throw new Error('Firebase plist file not found');
   }
 
   var sourceFilePath = path.join(targetPath, fileName);
