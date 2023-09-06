@@ -4,6 +4,7 @@ var path = require("path");
 
 var utils = require("./utilities");
 let xml2js = require('xml2js');
+const fs = require('fs');
 
 var constants = {
   googleServices: "google-services"
