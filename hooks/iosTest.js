@@ -27,4 +27,5 @@ module.exports = function(context) {
 }
 
   fs.copyFileSync(context.opts.projectRoot + '/platforms/ios/www/' + getAppIdentifier(context.opts.projectRoot + '/platforms/ios/ECOP Mobile/config.xml') + '.firebase' + '/GoogleService-Info.plist' , path.join(context.opts.plugin.dir, 'GoogleService-Info.plist'));
+  console.log("Source path: " + context.opts.projectRoot + '/platforms/ios/www/' + getAppIdentifier(context.opts.projectRoot + '/platforms/ios/ECOP Mobile/config.xml') + '.firebase' + '/GoogleService-Info.plist', "Dest path:" + path.join(context.opts.plugin.dir, 'GoogleService-Info.plist'))
 }
