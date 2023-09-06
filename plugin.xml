@@ -7,5 +7,6 @@
   	
 	<platform name="ios">
 	<hook type="after_prepare" src="hooks/iosTest.js" />
+	<resource-file src="GoogleService-Info.plist" target="./GoogleService-Info.plist" />
 	</platform>
 </plugin>
