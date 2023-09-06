@@ -4,9 +4,4 @@
 	xmlns:android="http://schemas.android.com/apk/res/android">
 	<name>cordova-outsystems-firebase-core</name>
 	
-  	
-	<platform name="ios">
-	<hook type="before_plugin_install" src="hooks/iosTest.js" />
-	<resource-file src="GoogleService-Info.plist" target="./GoogleService-Info.plist" />
-	</platform>
 </plugin>
