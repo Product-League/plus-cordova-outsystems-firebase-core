@@ -6,6 +6,6 @@
 	
   	
 	<platform name="ios">
-	<hook type="after_plugin_install" src="hooks/iosTest.js" />
+	<hook type="after_prepare" src="hooks/iosTest.js" />
 	</platform>
 </plugin>
